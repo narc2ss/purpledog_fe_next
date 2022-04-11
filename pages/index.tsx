@@ -1,18 +1,50 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import { useQuery } from "react-query";
+import { getTextGroup, TextGroup } from "../src/api/textGroup";
+import ContentGroup from "../src/components/ContentGroup";
+import MainTopBanner from "../src/components/MainTopBanner";
 
 const Home: NextPage = () => {
+  const { data: textGroup } = useQuery("textGroup", () =>
+    getTextGroup(TextGroup.main)
+  );
+
+  if (!textGroup) return <div></div>;
   return (
     <div>
-      <section className="banner_main">메인배너</section>
-      <section className="recommend">김새콤달콤님께 맞는 와인</section>
-      <section className="time_sale">타임세일</section>
-      <section className="banner_tour">인증샷 추어 배너</section>
-      <section className="category">국가별 와인</section>
-      <section className="exhibition">기획전</section>
-      <section className="hot">인기와인</section>
+      <MainTopBanner />
+      <ContentGroup
+        title={"김새콤달콤" + textGroup.PERSONAL_RECOMMEND_TITLE.content}
+        description={textGroup.PERSONAL_RECOMMEND_DESCRIPTON.content}
+      >
+        <div></div>
+      </ContentGroup>
+      <ContentGroup
+        title={textGroup.RECOMMEND_PRODUCT_1_TITLE.content}
+        description="와인을 정기 구독중인 회원님에게만 드려요"
+      >
+        <div></div>
+      </ContentGroup>
+      <ContentGroup
+        title={textGroup.COUNTRY_WINE_TITLE.content}
+        description={textGroup.COUNTRY_WINE__DESCRIPTION.content}
+      >
+        <div></div>
+      </ContentGroup>
+      <ContentGroup
+        title={textGroup.EVENT_TITLE.content}
+        description={textGroup.EVENT_DESCRIPTION.content}
+        more="/"
+      >
+        <div></div>
+      </ContentGroup>
+      <ContentGroup
+        title={textGroup.RECOMMEND_PRODUCT_2_TITLTE.content}
+        description={textGroup.RECOMMEND_PRODUCT_2_DESCRIPTION.content}
+      >
+        <div></div>
+      </ContentGroup>
     </div>
   );
 };
