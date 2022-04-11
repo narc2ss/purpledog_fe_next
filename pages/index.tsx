@@ -1,15 +1,36 @@
 import type { NextPage } from "next";
+import { useQuery } from "react-query";
+import { getTextGroup, TextGroup } from "../src/api/textGroup";
 
 const Home: NextPage = () => {
+  const { data: textGroup } = useQuery("textGroup", () =>
+    getTextGroup(TextGroup.main)
+  );
+
+  console.log(textGroup);
+  if (!textGroup) return <div></div>;
   return (
     <div>
-      <section className="banner_main">메인배너</section>
-      <section className="recommend">김새콤달콤님께 맞는 와인</section>
-      <section className="time_sale">타임세일</section>
-      <section className="banner_tour">인증샷 추어 배너</section>
-      <section className="category">국가별 와인</section>
-      <section className="exhibition">기획전</section>
-      <section className="hot">인기와인</section>
+      <section>
+        <h2>{textGroup.COUNTRY_WINE_TITLE.content}</h2>
+        <h3>{textGroup.COUNTRY_WINE__DESCRIPTION.content}</h3>
+      </section>
+      <section>
+        <h2>{textGroup.EVENT_TITLE.content}</h2>
+        <h3>{textGroup.EVENT_DESCRIPTION.content}</h3>
+      </section>
+      <section>
+        <h2>{textGroup.PERSONAL_RECOMMEND_TITLE.content}</h2>
+        <h3>{textGroup.PERSONAL_RECOMMEND_DESCRIPTON.content}</h3>
+      </section>
+      <section>
+        <h2>{textGroup.RECOMMEND_PRODUCT_1_TITLE.content}</h2>
+        <h3>없음</h3>
+      </section>
+      <section>
+        <h2>{textGroup.RECOMMEND_PRODUCT_2_TITLTE.content}</h2>
+        <h3>{textGroup.RECOMMEND_PRODUCT_2_DESCRIPTION.content}</h3>
+      </section>
     </div>
   );
 };
