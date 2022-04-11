@@ -9,4 +9,5 @@ export const colorPalette = {
   gray7: "#4A4A4A",
   gray8: "#333333",
   gray9: "#000000",
+  badge0: "#FF0045",
 };
