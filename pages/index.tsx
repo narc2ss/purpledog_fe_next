@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { useQuery } from "react-query";
 import { getTextGroup, TextGroup } from "../src/api/textGroup";
 import ContentGroup from "../src/components/ContentGroup";
+import MainTopBanner from "../src/components/MainTopBanner";
 
 const Home: NextPage = () => {
   const { data: textGroup } = useQuery("textGroup", () =>
@@ -11,18 +12,15 @@ const Home: NextPage = () => {
   if (!textGroup) return <div></div>;
   return (
     <div>
+      <MainTopBanner />
       <ContentGroup
         title={"김새콤달콤" + textGroup.PERSONAL_RECOMMEND_TITLE.content}
         description={textGroup.PERSONAL_RECOMMEND_DESCRIPTON.content}
-      >
-        <h1></h1>
-      </ContentGroup>
+      ></ContentGroup>
       <ContentGroup
         title={textGroup.RECOMMEND_PRODUCT_1_TITLE.content}
         description="와인을 정기 구독중인 회원님에게만 드려요"
-      >
-        <h1></h1>
-      </ContentGroup>
+      ></ContentGroup>
       <ContentGroup
         title={textGroup.COUNTRY_WINE_TITLE.content}
         description={textGroup.COUNTRY_WINE__DESCRIPTION.content}

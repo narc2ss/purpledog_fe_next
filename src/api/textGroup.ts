@@ -19,15 +19,15 @@ export const getTextGroup = async (textGroupCode: TextGroup) => {
 };
 
 export interface SectionTextGroup {
-  EVENT_DESCRIPTION: SectionText;
-  EVENT_TITLE: SectionText;
-  RECOMMEND_PRODUCT_2_DESCRIPTION: SectionText;
-  COUNTRY_WINE_TITLE: SectionText;
-  PERSONAL_RECOMMEND_DESCRIPTON: SectionText;
-  RECOMMEND_PRODUCT_2_TITLTE: SectionText;
   PERSONAL_RECOMMEND_TITLE: SectionText;
+  PERSONAL_RECOMMEND_DESCRIPTON: SectionText;
+  EVENT_TITLE: SectionText;
+  EVENT_DESCRIPTION: SectionText;
   RECOMMEND_PRODUCT_1_TITLE: SectionText;
+  COUNTRY_WINE_TITLE: SectionText;
   COUNTRY_WINE__DESCRIPTION: SectionText;
+  RECOMMEND_PRODUCT_2_TITLTE: SectionText;
+  RECOMMEND_PRODUCT_2_DESCRIPTION: SectionText;
 }
 
 export interface SectionText {
