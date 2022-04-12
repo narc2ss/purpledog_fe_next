@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import { getTextGroup, TextGroup } from "../src/api/textGroup";
 import ContentGroup from "../src/components/ContentGroup";
 import MainTopBanner from "../src/components/MainTopBanner";
+import PersonalRecommend from "../src/components/PersonalRecommend";
 
 const Home: NextPage = () => {
   const { data: textGroup } = useQuery("textGroup", () =>
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
         title={"김새콤달콤" + textGroup.PERSONAL_RECOMMEND_TITLE.content}
         description={textGroup.PERSONAL_RECOMMEND_DESCRIPTON.content}
       >
-        <div></div>
+        <PersonalRecommend />
       </ContentGroup>
       <ContentGroup
         title={textGroup.RECOMMEND_PRODUCT_1_TITLE.content}
