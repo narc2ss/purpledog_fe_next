@@ -22,13 +22,17 @@ const ProductCard: FC<Props> = ({ flexDirection, product }) => {
         />
       </div>
       <div>
-        <span>{product.styleNames}</span>
-        <h4>
-          {product.countryName}/{product.englishName}
-        </h4>
+        <span>
+          {product.countryName} · {product.wineryName}
+        </span>
+        <h4>{product.englishName}</h4>
         <p>39,500원</p>
-        <span>12%</span>
-        <span>45,500원</span>
+        {product.productOnSales && (
+          <div>
+            <span>12%</span>
+            <span>45,500원</span>
+          </div>
+        )}
       </div>
     </ProductCardBlock>
   );
@@ -41,6 +45,7 @@ interface ProductCardBlockProps {
 const ProductCardBlock = styled.div<ProductCardBlockProps>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection};
+  min-width: ${({ flexDirection }) => flexDirection === "column" && "140px"};
 `;
 
 export default ProductCard;

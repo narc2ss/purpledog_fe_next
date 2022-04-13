@@ -29,6 +29,7 @@ const ContentGroup: FC<Props> = ({ title, description, more, children }) => {
 };
 
 const ContentGroupBlock = styled.section`
+  overflow: scroll;
   & + & {
     margin-top: 1.875rem;
   }

@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { useQuery } from "react-query";
 import { getSucscriptionWineRecommend } from "../api/product";
 import ProductCard from "./ProductCard";
@@ -11,7 +12,7 @@ const PersonalRecommend = () => {
 
   if (!products) return <div></div>;
   return (
-    <div>
+    <PersonalRecommendBlock>
       {products.map((product) => (
         <ProductCard
           key={product.productId}
@@ -19,8 +20,15 @@ const PersonalRecommend = () => {
           product={product}
         />
       ))}
-    </div>
+    </PersonalRecommendBlock>
   );
 };
+
+const PersonalRecommendBlock = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: scroll;
+`;
 
 export default PersonalRecommend;
