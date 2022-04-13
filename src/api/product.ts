@@ -48,3 +48,15 @@ export const getSucscriptionWineRecommend = async () => {
 
   return res.data.results;
 };
+
+export const getSelectTimeSaleWine = async () => {
+  let res;
+  try {
+    res = await client.get<Response<Wine[]>>(`/product/selectTimeSaleWine`);
+  } catch (error) {
+    console.error(error);
+    throw Error("error");
+  }
+
+  return res.data.results;
+};

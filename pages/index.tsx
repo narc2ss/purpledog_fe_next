@@ -5,6 +5,7 @@ import { getTextGroup, TextGroup } from "../src/api/textGroup";
 import ContentGroup from "../src/components/ContentGroup";
 import MainTopBanner from "../src/components/MainTopBanner";
 import PersonalRecommend from "../src/components/PersonalRecommend";
+import TimeSale from "../src/components/TimeSale";
 
 const Home: NextPage = () => {
   const { data: textGroup } = useQuery("textGroup", () =>
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
         title={textGroup.RECOMMEND_PRODUCT_1_TITLE.content}
         description="와인을 정기 구독중인 회원님에게만 드려요"
       >
-        <div></div>
+        <TimeSale />
       </ContentGroup>
       <ContentGroup
         title={textGroup.COUNTRY_WINE_TITLE.content}
