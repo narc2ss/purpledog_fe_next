@@ -43,6 +43,7 @@ const BottomNavigator = () => {
 const BottomNavigatorBlock = styled.div`
   position: fixed;
   width: 100%;
+  min-width: 320px;
   height: 60px;
   bottom: 0;
   left: 0;
