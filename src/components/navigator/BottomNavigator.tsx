@@ -48,6 +48,7 @@ const BottomNavigatorBlock = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 99;
   background-color: ${colorPalette.gray0};
   display: flex;
   flex-direction: row;

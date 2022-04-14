@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import { colorPalette } from "./colorPalette";
 
 export const globalStyle = css`
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Open+Sans:wght@300;400;500&display=swap");
   * {
     margin: 0;
     padding: 0;
@@ -15,6 +16,7 @@ export const globalStyle = css`
     &::-webkit-scrollbar {
       display: none;
     }
+    font-family: "Noto Sans KR", sans-serif;
   }
 
   a {
