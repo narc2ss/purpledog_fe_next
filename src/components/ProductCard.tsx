@@ -87,7 +87,7 @@ const ProductCardBlock = styled.div<ProductCardBlockProps>`
       line-height: 1.5;
     }
     .name {
-      height: 2.375rem;
+      height: 2.5rem;
       font-size: 0.8125rem;
       display: -webkit-box;
       display: -ms-flexbox;
