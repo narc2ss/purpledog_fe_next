@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { globalStyle } from "../src/styles/globalStyle";
 import GlobalWidth from "../src/styles/globalWidth";
+import BottomNavigator from "../src/components/navigator/BottomNavigator";
 
 const queryClient = new QueryClient();
 const isDev = process.env.NODE_ENV === "development" ? true : false;
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Global styles={globalStyle} />
         <GlobalWidth>
           <Component {...pageProps} />
+          <BottomNavigator />
         </GlobalWidth>
         {isDev && <ReactQueryDevtools />}
       </QueryClientProvider>

@@ -68,3 +68,15 @@ export const getSelectTimeSaleWine = async () => {
 
   return res.data.results;
 };
+
+export const getPopularWine = async () => {
+  let res;
+  try {
+    res = await client.get<Response<Wine[]>>(`/product/selectPopularWine`);
+  } catch (error) {
+    console.error(error);
+    throw Error("error");
+  }
+
+  return res.data.results;
+};

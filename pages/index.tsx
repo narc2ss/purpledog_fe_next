@@ -7,6 +7,8 @@ import MainTopBanner from "../src/components/MainTopBanner";
 import PersonalRecommend from "../src/components/PersonalRecommend";
 import TimeSale from "../src/components/TimeSale";
 import Event from "../src/components/Event";
+import PopularWineList from "../src/components/PopularWineList";
+import styled from "@emotion/styled";
 
 const Home: NextPage = () => {
   const { data: textGroup } = useQuery("textGroup", () =>
@@ -15,7 +17,7 @@ const Home: NextPage = () => {
 
   if (!textGroup) return <div></div>;
   return (
-    <div>
+    <HomeBlock>
       <MainTopBanner />
       <ContentGroup
         title={"김새콤달콤" + textGroup.PERSONAL_RECOMMEND_TITLE.content}
@@ -46,10 +48,14 @@ const Home: NextPage = () => {
         title={textGroup.RECOMMEND_PRODUCT_2_TITLTE.content}
         description={textGroup.RECOMMEND_PRODUCT_2_DESCRIPTION.content}
       >
-        <div></div>
+        <PopularWineList />
       </ContentGroup>
-    </div>
+    </HomeBlock>
   );
 };
+
+const HomeBlock = styled.div`
+  padding-bottom: 5rem;
+`;
 
 export default Home;
