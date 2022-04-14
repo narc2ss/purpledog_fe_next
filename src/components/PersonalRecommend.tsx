@@ -29,6 +29,7 @@ const PersonalRecommendBlock = styled.div`
   flex-direction: row;
   width: 100%;
   overflow: scroll;
+  padding: 0 1rem;
 `;
 
 export default PersonalRecommend;

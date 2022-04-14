@@ -10,6 +10,11 @@ export const globalStyle = css`
     user-select: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-touch-callout: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   a {

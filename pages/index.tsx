@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 import { useQuery } from "react-query";
 import { getTextGroup, TextGroup } from "../src/api/textGroup";
 import ContentGroup from "../src/components/ContentGroup";
+import CountryWine from "../src/components/CountryWine";
 import MainTopBanner from "../src/components/MainTopBanner";
 import PersonalRecommend from "../src/components/PersonalRecommend";
 import TimeSale from "../src/components/TimeSale";
+import Event from "../src/components/Event";
 
 const Home: NextPage = () => {
   const { data: textGroup } = useQuery("textGroup", () =>
@@ -32,14 +33,14 @@ const Home: NextPage = () => {
         title={textGroup.COUNTRY_WINE_TITLE.content}
         description={textGroup.COUNTRY_WINE__DESCRIPTION.content}
       >
-        <div></div>
+        <CountryWine />
       </ContentGroup>
       <ContentGroup
         title={textGroup.EVENT_TITLE.content}
         description={textGroup.EVENT_DESCRIPTION.content}
         more="/"
       >
-        <div></div>
+        <Event />
       </ContentGroup>
       <ContentGroup
         title={textGroup.RECOMMEND_PRODUCT_2_TITLTE.content}

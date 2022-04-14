@@ -31,11 +31,11 @@ const ContentGroup: FC<Props> = ({ title, description, more, children }) => {
 const ContentGroupBlock = styled.section`
   overflow: scroll;
   & + & {
-    margin-top: 1.875rem;
+    /* margin-top: 1.875rem; */
   }
 
   .content_header {
-    margin-bottom: 1rem;
+    margin: 1.5rem 0 1rem 0;
     padding: 0 1rem;
     .title_wrap {
       height: 1.625rem;

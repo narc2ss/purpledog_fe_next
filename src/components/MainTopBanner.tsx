@@ -1,8 +1,4 @@
-import "swiper/css";
-import "swiper/css/scrollbar";
-
 import Image from "next/image";
-import { useState } from "react";
 import { useQuery } from "react-query";
 import { BannerCode, getBanner } from "../api/banner";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -35,6 +31,7 @@ const MainTopBanner = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <RoundedBottomBorder />
     </MainTopBannerBlock>
   );
 };
@@ -52,6 +49,18 @@ const MainTopBannerBlock = styled.div`
       }
     }
   }
+`;
+
+const RoundedBottomBorder = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color: ${colorPalette.gray0};
 `;
 
 export default MainTopBanner;

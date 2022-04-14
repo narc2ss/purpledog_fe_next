@@ -33,6 +33,14 @@ export interface Wine {
   styleNames: string;
   dryNames: string;
   productOnSales: boolean;
+  name?: string;
+  discountPercent?: number;
+  discountPrice?: number;
+  timeSaleDiscountPercent?: number;
+  timeSalePrice?: number;
+  timeSaleStartDate?: string;
+  timeSaleEndDate?: string;
+  subscriptionYn?: string;
 }
 
 export const getSucscriptionWineRecommend = async () => {
